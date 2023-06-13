@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <title>Pie Chart</title>
+</head>
+<body>
+
+    <div style="width: 750px; height: 550px; border: 1px solid black; display: flex; justify-content: space-between; align-items: start; margin-top: 5px;">
+
+        <div id="piechart" style="width: 900px; height: 500px;"></div>
+    </div>
+
+
+
+
+
+
+
+
+<script>
+          google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+          ['Task', 'Hours per Day'],
+          ['Frontend',     25],
+          ['Backend',      25],
+          ['Database',  25],
+          ['Connectivity', 25],
+        ]);
+
+        var options = {
+          title: 'My Daily Activities'
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+        chart.draw(data, options);
+      }
+</script>
+
+</body>
+</html>
